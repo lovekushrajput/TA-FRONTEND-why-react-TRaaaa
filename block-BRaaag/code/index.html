@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie-Watch-App</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+    </style>
+</head>
+
+<body>
+    <section>
+        <article>
+            <div>
+                <h1>Movie Watch List</h1> <input type="text" placeholder="Enter the movie name!">
+            </div>
+            <ul class="root"></ul>
+        </article>
+    </section>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- JSX -->
+    <script type="text/babel">
+        let input = document.querySelector('input')
+        let root = document.querySelector('.root')
+
+        let allMovie = []
+
+        input.addEventListener('keyup', (e) => {
+            if (e.keyCode === 13) {
+                if (e.target.value) {
+                    allMovie.push({ name: e.target.value, watched: false })
+                    e.target.value = ''
+                    createUI(allMovie)
+                } else { alert('Invalid input') }
+            }
+        })
+
+        //handleClick
+        function handleClick(e) {
+            let id = e.target.id
+            allMovie[id].watched ? allMovie[id].watched = false : allMovie[id].watched = true
+            createUI(allMovie)
+        }
+
+
+        //createUI
+        function createUI(arr) {
+            let movieUi = arr.map((elm, i) => {
+                //JSX
+                return (
+                    <li key={elm.name}>
+                        <p>{elm.name}</p>
+                        <span id={i} onClick={handleClick}>{elm.watched ? 'watched' : 'To watched'}</span>
+                    </li>
+                )
+            })
+            ReactDOM.render(movieUi, root)
+
+        }
+    </script>
+</body>
+
+</html>
