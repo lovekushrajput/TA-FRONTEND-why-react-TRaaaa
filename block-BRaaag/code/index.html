@@ -55,7 +55,7 @@
             let movieUi = arr.map((elm, i) => {
                 //JSX
                 return (
-                    <li>
+                    <li key={elm.name}>
                         <p>{elm.name}</p>
                         <span id={i} onClick={handleClick}>{elm.watched ? 'watched' : 'To watched'}</span>
                     </li>
