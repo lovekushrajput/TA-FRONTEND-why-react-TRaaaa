@@ -43,7 +43,7 @@ let articles = [
     imageURL:
       'https://techcrunch.com/wp-content/uploads/2019/07/GettyImages-846875220.jpg?w=1390&crop=1',
   },
-];
+]
 ```
 
 #### Preview
