@@ -25,6 +25,7 @@
     <!-- Script -->
 
     <script type="text/babel">
+        let root = document.querySelector('article')
 
         let articles = [
             {
@@ -64,37 +65,41 @@
             },
         ]
 
-
-        let CardsUI = (props) => (
-            props.map((card) => {
-             return   <div key={card.category} className="div">
+        //components-1
+        function Article(props) {
+            return (
+                <div className="div">
                     <figure>
-                        <img src={card.imageURL} alt={card.category} />
-                        <p className="photos">{card.category}</p>
-                        <div className="date">
-                            <p className="col-1">{card.date.getDate()}</p>
-                            <p className="col-2" >{String(card.date).split(' ').reverse().slice(7, 8).join(' ')}</p>
+                        <img src={props.card.imageURL} alt={props.card.category} />
+                        <p className="photos">{props.card.category}</p>
+                        <div className="date" key={props.card.category}>
+                            <p className="col-1">{props.card.date.getDate()}</p>
+                            <p className="col-2" >{String(props.card.date).split(' ').reverse().slice(7, 8).join(' ')}</p>
                         </div>
 
                     </figure>
 
 
                     <div className="hero">
-                        <h3> {card.title}</h3>
-                        <h4>{card.subTitle}</h4>
-                        <p className="description">{card.description}</p>
+                        <h3> {props.card.title}</h3>
+                        <h4>{props.card.subTitle}</h4>
+                        <p className="description">{props.card.description}</p>
 
                         <div className="comment">
                             <p> o 6 mins ago</p>
-                            <a href="#"><i class="fa-solid fa-comments"></i> {card.comments} Comments</a>
+                            <a href="#"><i className="fa-solid fa-comments"></i> {props.card.comments} Comments</a>
                         </div>
                     </div>
                 </div>
-            })
-        )
+            )
+        }
 
+        // components-2
+        function Articles() {
+            return articles.map((article) => <Article card={article} />)
+        }
 
-        ReactDOM.render(CardsUI(articles), document.querySelector('article'))
+        ReactDOM.render(<Articles />, root)
     </script>
 
 </body>
