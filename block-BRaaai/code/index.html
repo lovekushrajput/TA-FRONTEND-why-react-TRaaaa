@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap');
+    </style>
+    <!-- font-awesome-CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <section class="container">
+        <article></article>
+    </section>
+    <!-- React and ReactDOM -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- load babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+        let root = document.querySelector('article')
+        let cardInfo = {
+            title: 'City Lights in New York',
+            datee: new Date('2017-01-26'),
+            comments: 67,
+            subTitle: 'The city that never sleeps.',
+            description:
+                'New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments, magnificent buildings and countless dazzling skyscrapers.',
+            category: 'photos',
+            imageURL:
+                'https://images.unsplash.com/photo-1610874933184-7728fd666162?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60',
+        }
+
+        let d = <>
+            <figure>
+                <img src={cardInfo.imageURL} alt={cardInfo.category} />
+                <p className="photos">{cardInfo.category}</p>
+                <div className="date">
+                    <p className="col-1">{String(cardInfo.datee).split(' ').reverse().slice(6, 7).join(' ')}</p>
+                    <p className="col-2" >{String(cardInfo.datee).split(' ').reverse().slice(7, 8).join(' ')}</p>
+                </div>
+
+            </figure>
+
+
+            <div className="hero">
+                <h1> {cardInfo.title}</h1>
+                <h2>{cardInfo.subTitle}</h2>
+                <p className="description">{cardInfo.description}</p>
+
+                <div className="comment">
+                    <p> o 6 mins ago</p>
+                    <a href="#"><i class="fa-solid fa-comments"></i> {cardInfo.comments} Comments</a>
+                </div>
+            </div>
+        </>
+
+        ReactDOM.render(d, root)
+    </script>
+</body>
+
+</html>
