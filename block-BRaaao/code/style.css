@@ -1,0 +1,295 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* custom */
+body {
+  font-family: "Ubuntu", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1250px;
+  padding: 0 32px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+
+  /* common class */
+}
+.flex {
+  display: flex;
+}
+.space {
+  justify-content: space-between;
+}
+
+.line-height {
+  line-height: 1.2rem;
+}
+
+.margin-bottom {
+  margin-bottom: 0.5rem;
+}
+
+.width-50 {
+  width: 50%;
+}
+
+.width-55 {
+  width: 55%;
+}
+
+.black {
+  color: black;
+}
+.font-1 {
+  font-size: 1.1rem;
+}
+
+/* header */
+header {
+  background: linear-gradient(to bottom, rgb(46, 146, 207), rgb(34, 110, 155));
+  padding: 0.8rem 1rem;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: white;
+}
+
+.nav {
+  width: 30%;
+  color: rgb(230, 227, 227);
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+.nav li {
+  border: 1.5px solid rgb(230, 227, 227);
+  padding: 0.3rem 0.7rem;
+  border-radius: 0.3rem;
+}
+
+li {
+  text-transform: capitalize;
+}
+
+/* hero */
+.hero {
+  width: 100%;
+  margin: 2rem 0;
+}
+.hero figure {
+  width: 40%;
+}
+
+.hero h2 {
+  font-weight: 500;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+}
+
+.hero a {
+  color: black;
+}
+
+.hero a:hover {
+  color: #2f96d4;
+}
+
+.hero p {
+  margin-top: 1rem;
+  line-height: 1.5;
+  color: rgb(69, 69, 69);
+}
+
+/* Article */
+.article {
+  padding: 0.7rem 0;
+}
+
+.div {
+  flex-wrap: wrap;
+  margin: 1rem 0;
+  width: 100%;
+}
+
+.article div {
+  width: 47%;
+  color: grey;
+}
+
+.article figure {
+  width: 50%;
+}
+
+strong {
+  display: block;
+  color: grey;
+}
+
+.article div a:hover {
+  color: #2f96d4;
+}
+
+/* footer */
+footer {
+  background-color: black;
+  padding: 0.5rem 1rem;
+  color: white;
+  align-items: center;
+}
+
+footer ul {
+  width: 30%;
+}
+
+footer ul li a {
+  color: white;
+  font-size: 1.3rem;
+}
+
+.h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css -->
+    <link rel="stylesheet" href="style.css">
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- google font -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+    </style>
+
+</head>
+
+<body>
+    <section id="root"></section>
+
+    <!-- React and ReactDOM -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- Load Babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- custom script -->
+    <script type="text/babel">
+
+        let data = [
+            {
+                author: 'Omkar Godbole',
+                title:
+                    'Third Halving Turns Out to Be Non-Event for Bitcoin’s Price',
+                description:
+                    "Bitcoin's price volatility has declined following the network's third mining reward halving event on Monday.",
+                url:
+                    'https://www.coindesk.com/third-blockchain-halving-turns-out-non-event-bitcoins-price',
+                urlToImage:
+                    'https://static.coindesk.com/wp-content/uploads/2020/05/btc-chart-may-12-1200x628.png',
+                publishedAt: '2020-05-12T11:40:34Z',
+                content:
+                    "Bitcoin's price volatility has declined following the network's third mining reward halving event on Monday.  \r\nThe reward per block mined on bitcoin's blockchain was reduced to 6.25 BTC from 12.5 BTC at 19:23 UTC, when the cryptocurrency was trading near $8,… [+3792 chars]",
+            },
+            {
+                author: 'Samuel Haig',
+                title:
+                    'Gibraltar Financial Services Minister Talks ‘Staying Ahead’ on DLT',
+                description:
+                    'Gibraltar’s minister for digital and financial services spoke to Cointelegraph about regulating market manipulation in the blockchain sector.',
+                url:
+                    'https://cointelegraph.com/news/gibraltar-financial-services-minister-talks-staying-ahead-on-dlt',
+                urlToImage:
+                    'https://s3.cointelegraph.com/storage/uploads/view/353dbd86242a1d269f2c88dee06f347b.jpg',
+                publishedAt: '2020-05-12T11:24:00Z',
+                content:
+                    'The British Overseas Territory of Gibraltar, a pioneer of blockchain-friendly regulations, will introduce a new regulatory principle for the DLT sector addressing market manipulation risks in the coming months.\r\nIn an interview with Cointelegraph, Albert Isol… [+9060 chars]',
+            },
+            {
+                author: 'Joseph Young',
+                title:
+                    "4 Reasons the Bitcoin Halving Won't Trigger a Big ‘Miner Capitulation’",
+                description:
+                    'Bitcoin miners are not likely to see capitulation and especially a “mining death spiral” after the 2020 halving due to four major reasons.',
+                url:
+                    'https://cointelegraph.com/news/4-reasons-the-bitcoin-halving-wont-trigger-a-big-miner-capitulation',
+                urlToImage:
+                    'https://s3.cointelegraph.com/storage/uploads/view/d48310014a898546a95b35ed741b8eac.jpg',
+                publishedAt: '2020-05-12T11:08:00Z',
+                content:
+                    'A popular narrative revolving around the Bitcoin (BTC) halving is that it may trigger the capitulation of miners. But, it is premature to suggest many miners will shut down in 2020 and bring the price of cryptocurrencies down as a result.\r\nSome industry execu… [+4090 chars]',
+            },
+            {
+                author: 'Web Editor',
+                title:
+                    'Coronavirus-related Cyber Attacks jump 30% in past two weeks - TEISS',
+                description:
+                    'In the past two weeks,  documented an average of 192,000  per week, marking a 30% increase compared to previous weeks of these attacks start with phishing emails i…',
+                url:
+                    'https://www.teiss.co.uk/coronavirus-related-cyber-attacks-jump-30-in-past-two-weeks/',
+                urlToImage:
+                    'https://d3lu3qnchgm3nw.cloudfront.net/AcuCustom/Sitename/DAM/011/iStock-1177170875.jpg',
+                publishedAt: '2020-05-12T11:04:00Z',
+                content:
+                    'The World Health Organizations name and logo is a popular choice for hackers to impersonate. Recently, cyber criminals sent malicious emails posing as the WHO from the domain who.int with the email subject Urgent letter from WHO: First human COVID-19 vaccine … [+4458 chars]',
+            },
+            {
+                author: 'Nick Chong',
+                title:
+                    'Analysts Fear “Extreme” Post-Halving Bitcoin Capitulation: Why That’s Good',
+                description:
+                    'On Monday, the Bitcoin block reward packing into celebratory live streams, tens of thousands liking halving tweets, and hundreds…',
+                url:
+                    'https://www.newsbtc.com/2020/05/12/analysts-fear-extreme-post-halving-bitcoin-capitulation-why-this-isnt-bad/',
+                urlToImage:
+                    'https://www.newsbtc.com/wp-content/uploads/2020/05/jackson-david-WUydTfaP3t4-unsplash-1200x780.jpg',
+                publishedAt: '2020-05-12T11:00:42Z',
+                content:
+                    'On Monday, the Bitcoin block reward halving finally came to pass.\r\nIt was an exciting event celebrated by tens of thousands of cryptocurrency investors, with thousands packing into celebratory live streams, tens of thousands liking halving tweets, and hundred… [+3113 chars]',
+            },
+
+            {
+                author: 'Satoshi Nakaboto',
+                title:
+                    'Kronoverse Leaves Ethereum-based Enjin System to Use Bitcoin SV to Tokenize Esports In-game Items',
+                description:
+                    "LONDON, May 12, 2020 /PRNewswire/ -- eSports games  to tokenize users' in–game items because of the lack of scalability of the Ethereum blockchain. Pre…",
+                url:
+                    'https://www.prnewswire.com/news-releases/kronoverse-leaves-ethereum-based-enjin-system-to-use-bitcoin-sv-to-tokenize-esports-in-game-items-301057499.html',
+                urlToImage:
+                    'https://www.prnewswire.com/content/dam/prnewswire/common/prn_facebook_sharing_logo.jpg',
+                publishedAt: '2020-05-12T11:00:00Z',
+                content:
+                    "LONDON, May 12, 2020 /PRNewswire/ -- eSports games creator, Kronoverse, and its competitive strategy game CryptoFights, have moved to the Bitcoin SV blockchain to tokenize users' ingame items because of the lack of scalability of the Ethereum blockchain. \r\nPr… [+1773 chars]",
+            },
+            {
+                author: 'Boris Cumbo',
+                title:
+                    '5 Mistakes Every New Crypto Trader Should Avoid',
+                description:
+                    'The crypto industry is relatively new. Because of that, people need time to adapt to it. You will…\nThe post 5 Mistakes Avoid appeared first on The Frisky.',
+                url:
+                    'https://thefrisky.com/mistakes-crypto-trader-should-avoid/',
+                urlToImage:
+                    'https://thefrisky.com/wp-content/uploads/2020/05/crypto-trader.jpg',
+                publishedAt: '2020-05-12T09:09:22Z',
+                content:
+                    'The crypto industry is relatively new. Because of that, people need time to adapt to it. You will find people that are skeptical about this subject. They believe that cryptocurrencies will never replace fiat money. More precisely, you will hear them saying th… [+6128 chars]',
+            },
+        ]
+        let Ui = () => {
+            return <>
+                <Header />
+                <Hero />
+                <h2 className='h2'> Highlights</h2> <hr />
+                <article className='container'>
+                    <div className='div flex'>
+                        <Articles />
+                    </div>
+                </article>
+                <Footer />
+            </>
+        }
+
+        //header component-1
+        let Header = () => {
+            return (
+                <header>
+                    <nav>
+                        <ul className='flex space'>
+                            <li className='logo'>gizmo</li>
+                            <div className='flex space nav'>
+                                <li>home</li>
+                                <li>about </li>
+                                <li>contact</li>
+                            </div>
+                        </ul>
+                    </nav>
+                </header>
+            )
+        }
+
+        //hero component-2
+        let Hero = () => {
+            return (
+                // hero section
+                <article className='container'>
+                    <div className='hero flex space'>
+
+                        <figure>
+                            <img src={'https://www.gizmochina.com/wp-content/uploads/2022/08/iPhone-14-Lineup-Feature-Teal.jpg'} alt={';'} />
+                        </figure>
+                        <div className='width-55'>
+                            <h2>
+                                <a href="https://www.gizmochina.com/2022/08/08/iphone-14-series-launch-could-get-delayed-due-to-china-taiwan-tension/">iphone 14 series launch could get delayed due to China-Taiwan tension</a>
+                            </h2>
+                            <p>
+                                The upcoming iPhone 14 series from Apple, which is expected to launch in September, could be delayed. A recent report claims that the ongoing political tension between China and Taiwan may cause Apple to postpone the release of the iPhone 14 series.
+                            </p>
+
+                            <p>Apple has reportedly urged its Taiwanese suppliers to adhere to China’s new rules, prohibiting labeling products as “made in Taiwan, China” or “Chinese Taipai.”</p>
+                        </div>
+                    </div>
+
+
+                </article>
+            )
+        }
+
+
+        let Article = (props) => {
+            return (
+                // <article className='container'>
+                <div className='article flex space width-50'>
+                    <figure className=''>
+                        <img src={props.article.urlToImage} alt={';'} />
+                    </figure>
+
+                    <div>
+                        <h2 className='margin-bottom font-1'>
+                            <a className='black' href={props.article.url}>{props.article.title}</a>
+                        </h2>
+                        <strong className='margin-bottom'>{props.article.author}</strong>
+
+                        <p className='line-height'>{props.article.description}...</p>
+                    </div>
+
+                </div>
+                // </article>
+            )
+        }
+
+        let Articles = () => {
+            return data.map((article) => <Article key={article.author} article={article} />)
+        }
+
+        //footer components
+        let Footer = () => {
+            return (
+                <footer className='flex space'>
+                    <p> © 2020 All right reserved</p>
+                    <ul className='flex space'>
+                        <li>
+                            <a href="#">
+                                <i className="fa-brands fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i className="fa-brands fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i className="fa-brands fa-linkedin"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </footer>
+            )
+        }
+
+
+        ReactDOM.render(<Ui />, document.getElementById('root'))
+
+    </script>
+</body>
+
+</html>
