@@ -140,62 +140,50 @@ a {
   box-sizing: border-box;
 }
 
-/* variables */
-.root {
-  ---Primary-bg: #080086;
-  ---Secondary: white;
-  ---bg: #9b9b9b;
-}
-/* general classes */
-.center {
-  text-align: center;
-}
-
-.margin {
+button {
+  display: inline-block;
+  cursor: pointer;
   margin: 1rem;
+  text-transform: capitalize;
+  border-radius: 0.2rem;
 }
 
-.padding {
-  padding: 1rem;
+.button--primary {
+  background-color: #080086;
+  color: white;
+  border: transparent;
+  text-transform: capitalize;
 }
 
-button{
-    display: inline-block;
-    border: transparent;
-    cursor: pointer;
-    margin: 1rem;
-    background-color: rgb(194,0,75);
-    color: white;
-    text-transform: capitalize;
-    border-radius: 0.2rem;
+.button--secondary {
+  color: #080086;
+  border: transparent;
 }
 
-.primary , .secondary{
-    background-color: #080086;
-    color: white;
-    text-transform: capitalize;
+.button--tertiary {
+  color: #080086;
+  border: 1px solid #080086;
+  padding: 0.7rem 1.5rem;
+  text-transform: capitalize;
+  background: white;
 }
 
-.tertiary{
-    color: #080086;
-    border: 1px solid #080086;
-    padding: 0.7rem 1.5rem;
-    text-transform: capitalize;
-    background: white;
+button:disabled {
+  background-color: #665ece;
+  border: transparent;
 }
 
-button:disabled{
-    background-color:#665ece;
-    border: transparent;
+/* button sizes */
+.button-small {
+  padding: 0.5rem 0.8rem;
+  font-size: 1.1rem;
 }
-.small{
-    padding: 0.5rem 0.8rem;
-}
-.medium{
-    padding: 0.9rem 1.6rem;
+.button--medium {
+  padding: 0.9rem 1.5rem;
+  font-size: 1.2rem;
 }
 
-.large{
-    padding: 1.2rem 2.5rem;
-    font-size: 1.3rem;
+.button--large {
+  padding: 1.2rem 2rem;
+  font-size: 1.3rem;
 }
