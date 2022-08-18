@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <!-- React -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <!-- ReactDOM -->
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- Load Babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+        ReactDOM.render(<App />, document.getElementById('root'))
+
+
+        function Button(props) {
+            let { label, size, type, onClickHandler, disabled } = props
+
+            function getClass() {
+                return `button--${size || 'medium'} button--${type || 'primary'}`
+            }
+
+            return (
+                <button className={getClass()} onClick={onClickHandler} disabled={disabled}>{label || 'Button'} </button>
+            )
+        }
+
+
+
+        //App component
+        function App() {
+            return (
+                <>
+                    <Button />
+                    <Button type='tertiary' />
+                    <Button label='click me' type='secondary' onClickHandler={() => alert("You Clicked Me!")} />
+                    <Button label='click me' type='primary' size='small' />
+                    <Button label='click me' type='primary' size='medium' />
+                    <Button label='click me' type='primary' size='large' />
+
+                </>
+            )
+        }
+
+    </script>
+
+</body>
+
+</html>
